@@ -1,0 +1,149 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Account</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+        .shadow-background {
+            box-shadow: 0 0 20px rgba(240, 240, 240, 0.219);
+        }
+
+        .container {
+            width: 500px;
+            height: 400px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input,button {
+            border: none;
+            border-bottom: 1px solid #ccc;
+            border-radius: 0;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: 600;
+            font-size: 46px;
+            line-height: 1.25em;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: transparent;
+            color: #000000;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #343534;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div data-collapse="small" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease"
+        role="banner" class="nav-bar w-nav">
+        <!--Navigazione-->
+        <div class="nav-container w-container">
+            <div class="logo-div"><a href="/" aria-current="page" class="nav-logo w-inline-block w--current"><img
+                        src="images/logo_nero2.svg" width="178" alt="" class="logo" /></a></div>
+
+            <nav role="navigation" class="nav-content w-nav-menu">
+                <!--logo con motore di ricerca-->
+                <div class="search-banner">
+                </div>
+                <!--nav menu-->
+                <div class="nav-menu">
+                    <a href="/resources.html" class="nav-link w-nav-link">Tutte Le Lezioni</a>
+                </div>
+            </nav>
+            <div class="menu-button w-nav-button"><img src="images/menu-20icon.svg" loading="lazy" width="24" alt=""
+                    class="menu-icon" /></div>
+        </div>
+    </div>
+<br><br><br><br><br>
+    <!--dettagli account-->
+    <div class="shadow-background">
+        <div class="container">
+            <h1>Dettagli Account</h1>
+            <form>
+                
+                <label for="name">Email:</label>
+                <input placeholder="" id="email" maxlength="256" name="Email" class="text-field w-input" type="email" autoComplete="username" 
+                 data-wf-user-form-input-type="email" readonly required />
+
+                <label for="name">Nome:</label>
+                <input class="text-field w-input" maxlength="256" name="" data-name="field" data-wf-user-field="wf-user-field-name" placeholder="" fieldType=""
+                    type="text" id="name" readonly required />
+
+                <label for="password">Impostazioni password</label>
+                <input placeholder="" id="password" maxlength="256" name="Password" class="text-field w-input" type="password"  data-wf-user-form-input-type="password" readonly
+                 required/>
+           
+            </form>
+        </div>
+    </div>
+    </div>
+    
+    <br>
+    <!--footer-->
+    <div class="footer">
+        <div class="footer-container w-container">
+            <div class="w-layout-grid footer-grid">
+
+                <div id="w-node-b8d7be4a-ce45-83ab-5947-02d204c8bff0-cf3fcb86" class="footer-logo-block">
+                    <a data-ix="logo" href="/" aria-current="page" class="footer-logo w-nav-brand w--current">
+                        <img src="images/logo_nero2.svg" width="204" alt="" />
+                    </a>
+                    <p class="paragraph small">Realizzato dal team Gardanz.<br /></p>
+                    <div class="spacer _16"></div>
+                    <div class="paragraph small">© 2025 Tutti i diritti sono riservati.</div>
+                </div>
+
+                <div class="footer-links-container">
+                    <h5 class="footer-header">Website</h5>
+                    <a href="/" aria-current="page" class="footer-link w--current">Home</a>
+                    <a href="/resources.html" class="footer-link">Lezioni</a>
+                </div>
+
+                <div class="footer-links-container">
+                    <h5 class="footer-header">Account</h5>
+                    <a href="/log-in.html" class="footer-link">Sign In</a>
+                    <a href="/sign-up.html" class="footer-link">Sign Up</a>
+                    <a href="/account.html" class="footer-link">account utente</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

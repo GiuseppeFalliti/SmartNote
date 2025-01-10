@@ -1,0 +1,132 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .nav-menu2 {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .section {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+
+        .section.daek-page-header {
+            padding-top: 80px;
+            padding-bottom: 16px;
+            position: relative;
+        }
+        .image-container img{
+            width: 150%;
+            width: 480px;
+            height: 480px;
+            border-radius:15%;
+        }
+        .image-container {
+            position: absolute;
+            width: 120%; /* Estende il contenitore oltre la larghezza normale */
+            right: -80%; /* Sposta l'immagine verso destra */
+            top: 35%; /* Sposta l'immagine verso l'alto */
+            transform: translateY(-50%); /* Centra verticalmente rispetto alla sua posizione */
+        }
+
+        .hero-illustration {
+            width: 100%;
+            height: auto;
+            mix-blend-mode: multiply;
+        }
+        #button{
+            position: absolute;
+            left: 390px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!--Navigazione-->
+    <div data-collapse="small" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease"
+        role="banner" class="nav-bar w-nav">
+
+        <div class="nav-container w-container">
+            <div class="logo-div"><a href="/" aria-current="page" class="nav-logo w-inline-block w--current"><img
+                        src="../images/logo_nero2.svg" width="178" alt="" class="logo" /></a></div>
+
+            <nav role="navigation" class="nav-content w-nav-menu">
+
+                <!--nav menu-->
+                <div class="nav-menu2">
+                    <a href="/index.html" class="nav-link w-nav-link" data-wf-user-logout="Log Out"
+                        data-wf-user-login="Home" type="button">
+                        Home</a>
+                    <a href="/resources.html" class="nav-link w-nav-link">Tutte Le Lezioni</a>
+                </div>
+            </nav>
+
+            <div class="menu-button w-nav-button"><img src="../images/menu-20icon.svg" loading="lazy" width="24" alt=""
+                    class="menu-icon" /></div>
+        </div>
+    </div>
+
+    <!--download lezione-->
+    <div class="section daek-page-header">
+        <div class="container">
+            <div class="hero-grid">
+                <!-- Colonna sinistra con testo -->
+                <div class="text-box">
+                    <h1 class="heading h1">Gestione Database</h1>
+                    <p class="paragraph">
+                        Lezione basata sull'apprendimento della creazione di un'applicazione backend 
+                        <br>sulla creazione e gestione di un database nel linguaggio Javascript.
+                    </p>
+                    <div class="spacer _24"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <a href="/appunti/Creazione di un'Applicazione Backend con JavaScript e SQLite.pdf" class="button" id="button">Ottieni</a>
+    <div class="image-container">
+        <img src="../images/imagecovercorso3.svg" alt="" class="hero-illustration">
+    </div>
+
+    <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  
+    <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>    
+   
+
+    <!--Footer-->
+    <footer>
+        <div class="footer">
+            <div class="footer-container w-container">
+                <div class="w-layout-grid footer-grid">
+                    <div id="w-node-b8d7be4a-ce45-83ab-5947-02d204c8bff0-cf3fcb86" class="footer-logo-block"><a
+                            data-ix="logo" href="/" aria-current="page" class="footer-logo w-nav-brand w--current"><img
+                                src="../images/logo_nero2.svg" width="204" alt="" /></a>
+                        <p class="paragraph small">Realizzato dal team Gardanz.<br /></p>
+                        <div class="spacer _16"></div>
+                        <div class="paragraph small">© 2025 Tutti i diritti sono riservati.</div>
+                    </div>
+                    <div class="footer-links-container">
+                        <h5 class="footer-header">Website</h5><a href="/" aria-current="page"
+                            class="footer-link w--current">Home</a><a href="/resources.html"
+                            class="footer-link">Lezioni</a>
+                    </div>
+                    <div class="footer-links-container">
+                        <h5 class="footer-header">Account</h5><a href="/log-in.html" class="footer-link">Sign In</a><a
+                            href="/sign-up.html" class="footer-link">Sign Up</a><a href="/account.html"
+                            class="footer-link">account utente</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
