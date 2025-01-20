@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Nostri Tutor - SmartNotes</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .tutor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tutor-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .tutor-image-container {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        .tutor-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tutor-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .tutor-info {
+            padding: 20px;
+        }
+
+        .tutor-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--dim-grey);
+        }
+
+        .tutor-description {
+            color: var(--grey);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .tutor-price {
+            font-weight: bold;
+            color: green;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .book-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .book-button:hover {
+            background-color: var(--grey);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 46px;
+            color: var(--black);
+            margin: 40px 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div data-collapse="small" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease"
+        role="banner" class="nav-bar w-nav">
+        <!--Navigazione-->
+        <div class="nav-container w-container">
+            <div class="logo-div"><a href="/" aria-current="page" class="nav-logo w-inline-block w--current"><img
+                        src="images/logo_nero2.svg" width="178" alt="" class="logo" /></a></div>
+
+            <nav role="navigation" class="nav-content w-nav-menu">
+                <!--logo con motore di ricerca-->
+                <div class="search-banner">
+                </div>
+                <!--nav menu-->
+                <div class="nav-menu">
+                    <a href="/index.html" class="nav-link w-nav-link" 
+                        data-wf-user-login="Home" type="button"> Home
+                    </a>
+                    <a href="/resources.html" class="nav-link w-nav-link">
+                        Tutte le Lezioni
+                    </a>
+                </div>
+                
+            </nav>
+            <div class="menu-button w-nav-button"><img src="images/menu-20icon.svg" loading="lazy" width="24" alt=""
+                    class="menu-icon" /></div>
+        </div>
+    </div>
+
+    <h1 class="section-title">I Nostri Tutor</h1>
+
+    <div class="tutor-grid">
+        <!-- Tutor Card 1 -->
+        <div class="tutor-card">
+            <div class="tutor-image-container">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600" alt="Marco Rossi" class="tutor-image">
+            </div>
+            <div class="tutor-info" >
+                <h2 class="tutor-name">Laura Notti</h2>
+                <p class="tutor-description">Esperto in Matematica e Fisica. Specializzato in preparazione esami universitari e recupero scolastico.</p>
+                <p class="tutor-price">€10/ora</p>
+                <a href="#" class="book-button">Prenota Lezione</a>
+            </div>
+        </div>
+
+        <!-- Tutor Card 2 -->
+        <div class="tutor-card">
+            <div class="tutor-image-container">
+                <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=600" alt="Giuseppe Verdi" class="tutor-image">
+            </div>
+            <div class="tutor-info">
+                <h2 class="tutor-name">Giuseppe Rossi</h2>
+                <p class="tutor-description">Specialista in Informatica e Programmazione. Corsi di Javascript/React,Web Development.</p>
+                <p class="tutor-price">€15/ora</p>
+                <a href="#" class="book-button">Prenota Lezione</a>
+            </div>
+        </div>
+
+        <!-- Tutor Card 3 -->
+        <div class="tutor-card">
+            <div class="tutor-image-container">
+                <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=600" alt="Giuseppe Verdi" class="tutor-image">
+            </div>
+            <div class="tutor-info">
+                <h2 class="tutor-name">Giuseppe Verdi</h2>
+                <p class="tutor-description">Specialista in Informatica e Programmazione. Corsi di Python, Java e Web Development.</p>
+                <p class="tutor-price">€15/ora</p>
+                <a href="#" class="book-button">Prenota Lezione</a>
+            </div>
+        </div>
+
+        <!-- Tutor Card 4 -->
+        <div class="tutor-card">
+            <div class="tutor-image-container">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600" alt="Marco Rossi" class="tutor-image">
+            </div>
+            <div class="tutor-info">
+                <h2 class="tutor-name">Romanz Romano</h2>
+                <p class="tutor-description">Insegnante di Greco e Latino. Preparazione esami di maturità e supporto universitario.</p>
+                <p class="tutor-price">€10/ora</p>
+                <a href="#" class="book-button">Prenota Lezione</a>
+            </div>
+        </div>
+
+        <!-- Tutor Card 5 -->
+        <div class="tutor-card">
+            <div class="tutor-image-container">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600" alt="Marco Rossi" class="tutor-image">
+            </div>
+            <div class="tutor-info">
+                <h2 class="tutor-name">Sofia Romano</h2>
+                <p class="tutor-description">Insegnante di Letteratura e Storia. Preparazione esami di maturità e supporto universitario.</p>
+                <p class="tutor-price">€8/ora</p>
+                <a href="#" class="book-button">Prenota Lezione</a>
+            </div>
+        </div>
+
+        <!-- Tutor Card 6 -->
+     <div class="tutor-card">
+        <div class="tutor-image-container">
+            <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=600" alt="Giuseppe Verdi" class="tutor-image">
+        </div>
+        <div class="tutor-info">
+            <h2 class="tutor-name">Mario Acqua</h2>
+            <p class="tutor-description">Specialista in Programmazione e Data Analyst. Corsi di Python lato backend, Google sheet.</p>
+            <p class="tutor-price">€10/ora</p>
+            <a href="#" class="book-button">Prenota Lezione</a>
+        </div>
+    </div>
+
+
+
+    </div>
+
+     
+
+    <!--footer-->
+    <div class="footer">
+        <div class="footer-container w-container">
+            <div class="w-layout-grid footer-grid">
+
+                <div id="w-node-b8d7be4a-ce45-83ab-5947-02d204c8bff0-cf3fcb86" class="footer-logo-block">
+                    <a data-ix="logo" href="/" aria-current="page" class="footer-logo w-nav-brand w--current">
+                        <img src="images/logo_nero2.svg" width="204" alt="" />
+                    </a>
+                    <p class="paragraph small">Realizzato dal team Gardanz.<br /></p>
+                    <div class="spacer _16"></div>
+                    <div class="paragraph small"> 2025 Tutti i diritti sono riservati.</div>
+                </div>
+
+                <div class="footer-links-container">
+                    <h5 class="footer-header">Website</h5>
+                    <a href="/" aria-current="page" class="footer-link w--current">Home</a>
+                    <a href="/resources.html" class="footer-link">Lezioni</a>
+                </div>
+
+                <div class="footer-links-container">
+                    <h5 class="footer-header">Account</h5>
+                    <a href="/log-in.html" class="footer-link">Sign In</a>
+                    <a href="/sign-up.html" class="footer-link">Sign Up</a>
+                    <a href="/Tutor.html" class="footer-link">I nostri tutor</a>
+                    <a href="/account.html" class="footer-link">account utente</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
