@@ -22,7 +22,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
     console.log("Connessione al database SQLite stabilita.");
 });
 
-// Creazione della tabella "utenti"
+// Creazione della tabella utenti
 db.run(
     `CREATE TABLE IF NOT EXISTS users(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -38,6 +38,45 @@ db.run(
         }
     }
 );
+
+//creazione della tabella tutor
+db.run(
+    `CREATE TABLE IF NOT EXISTS tutor(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        email TEXT NOT NULL,
+        name TEXT NOT NULL,
+        data_nascita TEXT NOT NULL,
+        materia TEXT NOT NULL,  
+        password TEXT NOT NULL 
+
+        
+    )`, 
+    (err) => {      
+        if (err) {      
+            console.error('Errore durante la creazione della tabella:', err.message);       
+        } else {      
+            console.log('Tabella "tutor" pronta.');      
+        }  
+    }
+);
+
+//stampa della tabella utenti
+db.all("SELECT * FROM users", (err, rows) => {
+    if (err) {
+        console.error("Errore nella ricerca dei dati:", err.message);
+    } else {
+        console.log("Dati della tabella utenti:", rows);
+    }
+});
+
+//stampa della tabella tutor
+db.all("SELECT * FROM tutor", (err, rows) => {
+    if (err) {
+        console.error("Errore nella ricerca dei dati:", err.message);
+    } else {
+        console.log("Dati della tabella utenti:", rows);
+    }
+});
 
 //Endpoint per la registrazione di un nuovo utente
 app.post("/sign-up", (req, res) => {
@@ -55,6 +94,23 @@ app.post("/sign-up", (req, res) => {
     });
 
 });
+
+//endpoint per registrare un nuovo tutor
+app.post("/sign-up-tutor", (req, res) => {
+    console.log("Richiesta ricevuta",req.body); //Stampa il body della richiesta
+    const { email, name, data_nascita, materia,password} = req.body; //Riceve l'email, il nome e la password dal body della richiesta
+
+    //Query per inserire un nuovo utente nella tabella "utenti"
+    const query = "INSERT INTO tutor (email, name, data_nascita ,materia, password) VALUES (?, ?, ?, ?, ?)";
+    db.run(query, [email, name, data_nascita,materia, password], function (err){
+        if (err) {
+            console.error("Errore nell\'inserimento dei dati:", err.message);
+            return res.status(500).send('Errore nell\'inserimento dei dati');
+        }
+        res.status(200).send('Utente registrato correttamente');
+    });
+    }
+);
 
 //Endpoint per il login di un utente
 app.post("/log-in", (req, res) => {
@@ -77,6 +133,29 @@ app.post("/log-in", (req, res) => {
         }
     });
 });
+
+//Endpoint per il login di un tutor
+app.post("/log-in-tutor", (req, res) => {
+    const { email, password } = req.body; //Riceve l'email e la password dal body della richiesta
+
+    //Query per verificare se l'utente esiste nella tabella "tutor"
+    const query= ` SELECT * FROM tutor WHERE email = ? AND password = ? `;
+    db.get(query, [email, password], (err, row) => {
+        if (err){
+            console.error("Errore nella ricerca dell'utente:", err.message);
+            return res.status(500).send('Errore del server');
+        }
+        if (row){
+            // Se l'utente è trovato
+            res.status(200).send('Login effettuato con successo');
+        }
+        else{
+            // Se l'utente non viene trovato
+            res.status(401).send('Utente non trovato');
+        }
+    })
+    }
+);
 
 //avvio il server
 app.listen(3000, () => {
